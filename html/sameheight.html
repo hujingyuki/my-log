@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>多列等高-高度自适应布局</title>
+</head>
+<style type="text/css">
+  .box {
+   width: 600px;
+   float: left;
+  }
+  
+  .box div {
+   color: #FFF;
+   display: table-cell;
+   height: 150px;
+  }
+
+  .container{
+    margin:0 auto; 
+    width:600px; 
+    border:3px solid #00C;
+    overflow:hidden;
+    /*这个超出隐藏的声明在IE6里不写也是可以的*/
+  }
+  .left{
+    float:left; 
+    width:150px; 
+    background:#B0B0B0;
+    padding-bottom:2000px;
+    margin-bottom:-2000px;
+  }
+  .right{
+    float:left; 
+    width:450px; 
+    background:#6CC;
+    padding-bottom:2000px;
+    margin-bottom:-2000px;
+  }
+
+  .last{
+    height: calc(100%-150px);
+  }
+ </style>
+ 
+<body>
+  <div class="box">
+    <div style="background: #666;">
+     <span>第1列</span>
+    </div>
+    <div style="background: #444;">
+     <span>第2列</span>
+    </div>
+    <div style="background: #222;">
+     <span>第3列 </span>
+    </div>
+    <div style="background: #000;">
+     <span>第4列 </span>
+    </div>
+   </div>
+
+  <div class="newbox">
+    <div class="container">
+      <div class="left">我是left</div>
+      <div class="right">我是right<br><br><br>现在我的高度比left高，但left用它的padding-bottom补偿了这部分高度</div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+
+  <div class="last"></div>
+</body>
+</html>
