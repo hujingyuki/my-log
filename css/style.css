@@ -1,0 +1,75 @@
+/*html{
+    min-width: 100%;
+    color: #000;
+    background:#fff;
+    font-size: 100%;
+}
+*/
+
+body{
+    margin:0;
+    padding:0;
+    font-family:"Mircosoft YaHei";
+    color: #333;
+}
+
+.mt15{
+    margin-top:15px;
+}
+
+.left-div{
+    float: left;
+    width:300px;
+    height:300px;
+    background: tomato;
+    /*水平垂直居中盒子*/
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.center-div{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width:200px;
+    height:200px;
+    margin-top: -100px;
+    margin-left:-100px;
+    background-color: yellow;
+}
+
+.right-div{
+    float: right;
+    width: 300px;
+    height: 300px;
+    background-color:green;
+}
+
+.circle-div{
+    width: 100px;
+    height: 100PX;
+    background-color: aqua;
+    border-radius: 50%;
+    cursor: crosshair;    
+    position: absolute;
+    left:50px;
+    top:50px;
+    line-height:100px;
+    text-align:center;
+}
+
+.imgcircle{
+    vertical-align:middle;
+}
+
+.spantext{
+    line-height:30px;
+}
+
+.oneborder{
+    margin-top:350px;
+    height:1px;
+    overflow: hidden;
+    background: red;
+}

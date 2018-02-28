@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>circle</title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <body>
+        <header>三种可点击的圆</header>
+        <div class="left-div">
+            <span class="spantext">map+area</span>
+            <div>
+            <img src="../image/1.png" border=0 width="200" height="200" usemap="#Map" class="imgcircle">
+            <map name="Map" id="Map">
+                <area shape="circle" coords="100,100,50" href="https:www.baidu.com" alt="点击打开" target="_blank">
+            </map>
+        </div>
+        </div>
+        <div class="center-div">
+            <div class="circle-div" onclick="warn()">
+                 从一而终
+            </div>   
+        </div>
+        <div class="right-div">
+        </div>
+        <div class="oneborder">
+        </div>
+    </body>
+    <script>
+    function warn(){
+        alert("可点击区域")
+    }
+
+    document.onclick= function (event){
+        const r=100;
+        const [x1,y1]=[100,100];
+        let [x2,y2]=[event.clientX,event.clientY];
+        console.log([x1,y1,x2,y2]);
+        let len=Math.abs(Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+        if(len<=r){
+            console.log("Inner");
+        }else{
+            console.log("Outer");
+        }
+
+    }
+    </script>
+</html>
