@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI状态伪类选择器</title>
+</head>
+<style>
+    input[type="checked"]:checked {
+        border: 1px solid red;
+        width: 13px;
+        height: 13px;
+    }
+    
+    input[type="text"]:disabled {
+        border: 1px solid #ddd;
+        background-color: #ddd;
+    }
+</style>
+
+<body>
+    <input type="checkbox" name="" id="" checked="checked">
+    <input type="text" name="" id="" disabled="disabled">
+</body>
+
+</html>

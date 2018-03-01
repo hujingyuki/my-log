@@ -7,19 +7,75 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>h5简单页面</title>
 </head>
-<<<<<<< HEAD
 <style>
-    #demo{
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent; 
-    border-top: 100px solid red;
-}
+    #demo {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 100px solid red;
+    }
+    
+    .rtl {
+        text-decoration: rtl;
+    }
+    
+    .border-div1 {
+        width: 300px;
+        height: 50px;
+        background-color: red;
+        position: relative;
+    }
+    
+    .border-div1::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 25px solid red;
+        top: 0;
+        left: 100%;
+        position: absolute;
+        border-color: red transparent red red;
+    }
+    
+    .radius {
+        border: 10px solid greenyellow;
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+    }
+    
+    .radius1 {
+        border-radius: 50%;
+    }
+    
+    .radius2 {
+        width: 200px;
+        height: 200px;
+        border: none;
+        border-radius: 100px 100px 0 0;
+    }
+    
+    .radius3 {
+        border-radius: 10px 20px 30px;
+    }
+    
+    .radius4 {
+        border-radius: 10px 20px 30px 40px;
+    }
+    
+    .radius5 {
+        border-width: 30px;
+        border-radius: 5px 20px 35px 50px/35px 30px 35px 50px;
+        border-color: grey blue yellowgreen red;
+    }
+    
+    .img-radius {
+        border-radius: 30px;
+    }
 </style>
-=======
 
->>>>>>> a893a0e084bbc824173b3ba9cecab16f21970cc0
 <body>
     <h1>清明</h1>
     <div>清明时节雨纷纷 </div>
@@ -56,7 +112,6 @@
             <dd>part4</dd>
         </dl>
     </div>
-<<<<<<< HEAD
     <hr>
     <div>
         <h2>纯CSS创建一个三角形</h2>
@@ -71,9 +126,19 @@
             <figcaption>我是一个美女</figcaption>
         </figure>
     </div>
-=======
 
->>>>>>> a893a0e084bbc824173b3ba9cecab16f21970cc0
+    <div class="rtl">我是烦的文字</div>
+
+    <hr>
+
+    <h2>border</h2>
+    <div class="border border-div1"></div>
+    <div class="radius radius1"></div>
+    <div class="radius radius2"></div>
+    <div class="radius radius3"></div>
+    <div class="radius radius4"></div>
+    <div class="radius radius5"></div>
+    <img src="../image/slide1.png" alt="" class="img-radius" />
 </body>
 
 </html>
