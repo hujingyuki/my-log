@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>text</title>
+</head>
+<style>
+  
+  body{
+    margin:0;
+    padding:0;
+    font:100% /1.3rem 'Roboto',sans-serif;
+    background: #fff;
+  }
+
+  .content{
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    width: 500px;
+    height: 300px;
+    margin :0 auto;
+  }
+
+  p:first-of-type{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 40px;
+    white-space:nowrap; 
+  }
+
+   p:last-of-type{
+    text-overflow: clip;
+    overflow: hidden;
+    height: 25px;
+  }
+
+  .shadow{
+    text-shadow: 2px 3px 4px red,2px 3px 4px red;
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+    padding:5%;
+  }
+
+  h2{
+    text-shadow: 1px 1px 1px red,1px -1px 1px red;
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+    text-transform:capitalize;
+  }
+  .letter-spacing{
+    letter-spacing:10px;
+    font-size: 1em;
+    margin-top: 10px;
+    height: 50px;
+  }
+
+  .word-spacing{
+    word-spacing:10px;
+    font-size: 1em;
+    margin-top: 10px;
+    height: 50px;
+  }
+</style>
+<body>
+  <div class="content">
+    <p> text-overflow:ellipsis :老公是做技术的，工资对于农村人来说不低了，每个月有1万八，我每月工资6000的样子，平时我们在外除了花销租房子以外，其他我们都很节省。</p>
+     <p>  text-overflow:clip : 我们有个4岁的儿子，老家婆婆帮我们带着，我一直觉得对不起儿子，想把儿子带身边，可就是没这个条件。</p>
+     <span class="shadow">text-shadow</span>
+     <h2>text-shadow</h2>
+     <h3 class="letter-spacing">letter-spacing中文也带间距</span>
+     <h3 class="word-spacing">letter-spacing英文间距不生效</span>
+      <span class="space-nowrap"></span>
+  </div>
+</body>
+</html>
