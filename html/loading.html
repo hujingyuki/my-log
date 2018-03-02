@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>loading</title>
+</head>
+<style>
+  /*
+  *masking对象
+  *1、背景透明
+  *2、定位fixed
+  */
+
+  body{
+    margin:0;
+    padding:0;
+    font:100% /1.3rem 'Roboto',sans-serif;
+    background: #fff;
+  }
+
+  .loading{
+    background: rgba(0, 0, 0, 0.65);
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right: 0;
+    z-index: 999;
+  }
+
+/*容器水平垂直居中*/
+  .loading > div{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate3d(-50%,-50%,0);
+  }
+
+  .loading .c{
+    position: absolute;
+    width:16px;
+    height:16px;
+    background: #ff8c00;
+    border-radius: 100%;
+  }
+
+  .loading .c1{
+    top:10px;
+    left:10px;
+    transform-origin:20px 20px;
+    animation: spin-a 2s infinite cubic-bezier(0.5,0,0.5,1); 
+  }
+
+   .loading .c2{
+    top:10px;
+    left:10px;
+    transform-origin:-4px 20px;
+    animation: spin-a 2s infinite cubic-bezier(0.5,0,0.5,1); 
+  }
+
+   .loading .c3{
+    top:10px;
+    left:10px;
+    transform-origin:-4px -4px;
+    animation: spin-a 2s infinite cubic-bezier(0.5,0,0.5,1); 
+  }
+
+   .loading .c4{
+    top:10px;
+    left:10px;
+    transform-origin:20px -4px;
+    animation: spin-a 2s infinite cubic-bezier(0.5,0,0.5,1); 
+  }
+
+  @keyframes spin-a {
+    0%{
+      transform: rotate(90deg);
+    }
+    25%{
+      transform: rotate(90deg);
+    }
+    50%{
+      transform: rotate(180deg);
+    }
+    75%{
+      transform: rotate(270deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading > span{
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    left:50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: 30px;
+    color:#ff8c00;
+    font-size: 12px;
+    text-align:center;
+  }
+
+  .content{
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    width: 500px;
+    height: 300px;
+    margin :0 auto;
+  }
+
+  p:first-of-type{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 40px;
+    white-space:nowrap; 
+  }
+
+   p:last-of-type{
+    text-overflow: clip;
+    overflow: hidden;
+    height: 25px;
+  }
+</style>
+<body>
+  <div class="content">
+      
+    <p>老公是做技术的，工资对于农村人来说不低了，每个月有1万八，我每月工资6000的样子，平时我们在外除了花销租房子以外，其他我们都很节省。</p>
+
+     <p> 我们有个4岁的儿子，老家婆婆帮我们带着，我一直觉得对不起儿子，想把儿子带身边，可就是没这个条件。</p>
+      
+      我一直想在城里买房，带着儿子安定下来，奈何刚开始没有首付，这两年我和老公提了很多次，他都不答应，还说大城市人挨人有什么好，一辈子累死累活买套房，还不如打工几年，挣钱回老家，风景什么都好。
+      
+      
+      
+      我真是要被他气死了，我让我爸还有他堂哥都劝过他，他就是没同意，眼睁睁的看着房价一天天的涨，越来越买不起。那些买了房子的朋友，房价涨了几十万。
+      
+      这次过年回家，看儿子那样子既心酸又无奈，我真怕他和我们一样输在起跑线上，老公总说我虚荣爱攀比。
+      
+      家里婆婆还催我们要二胎，我们哪敢生，都说生一个儿子得准备一百多万。
+      
+      
+      
+      这次回家，老公兄弟说要结婚了，人家女方开口要16万彩礼，公婆都发愁，最后找老公借钱，老公当场没表态。
+      
+      晚上关起房门我对老公说，“这不是个小数目，我们存钱是为了买房的，反正我不借”。
+      
+      老公一直没说话，中间我回娘家了两天，老公却突然给我发了一个红包，我们这几年一直都不弄这些形式，我还觉得他突然转性了。
+      
+      好脾气的打了他的电话，他叹了口气，说拿了10万给他弟弟，他做哥哥的不能看着弟弟不成家，我一听整个人都不高兴了
+      
+      
+      
+      我没听他解释，把电话挂掉了，回家以后，我和他大吵一架，本来平时我觉得他工作辛苦，男人爱面子，在外面我也不会让人看笑话，这次我实在气疯了。
+      
+      当天晚上我没让他进房门，婆婆那几天也在讨好我，之后老公说今年再好好挣一年，明年准备买房，我却一点儿也高兴不起来。
+      
+      这都过得什么日子啊，憋屈死了，想有个自己的房子怎么这么难呢。
+  </div>
+  <div class="loading">
+    <div>
+      <div class="c c1"></div>
+      <div class="c c2"></div>
+      <div class="c c3"></div>
+      <div class="c c4"></div>
+    </div>
+      <span class=""></span>
+  </div>
+  <!-- <Loading class=""></Loading> -->
+</body>
+</html>

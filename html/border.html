@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>border</title>
+</head>
+<style>
+.border-shadow{
+  width: 200px;
+  height: 200px;
+  border:2px solid yellowgreen;
+  /* x偏移，y偏移，模糊，阴影尺寸
+  box-shadow: 4px 4px 10px 2px turquoise;*/
+  box-shadow: 5px 0 10px red;
+  /* box-shadow 属性可用逗号隔开做成多色边框 */
+}
+
+
+/*搜索框*/
+.search-form{
+  margin: 30px auto;
+  height: 70px;
+  width: 500px;
+  background:#565656;
+  border-radius:8px;
+  box-shadow: -5px 5px 5px #535353;
+}
+
+.search-container{
+  padding-top: 10px;
+  padding-left: 8px;
+}
+
+.search-input{
+    width: 360px;
+    height: 46px;
+    border-radius: 5px;
+    border:none;
+    font-size: 24px;
+    float: left;
+}
+
+.search-button{
+  height: 50px;
+  width: 112px;
+  border-radius: 5px;
+  background:yellowgreen; 
+  border:none;
+  margin-left:5px;
+}
+
+/* Loading 动画*/
+.loading{
+  position: relative;
+  min-height: 250px;
+  min-width: 250px;
+  transform: rotate(-19deg)
+}
+
+.loading:before,
+.loading:after {
+ animation:loading-before 2s infinite ease-in-out;
+ border-radius: 3rem;
+ box-shadow: 100px -50px rgba(94,187,203,0.85),
+ -100px 50px rgba(211, 21, 78, 0.85),
+ 50px 100px rgba(222, 148, 35, 0.85),
+ -50px -100px rgba(52,165,125,0.85);
+ content:"";
+ display: block;
+ font-size:50px;
+ height: 3rem;
+ left:50%;
+ mix-blend-mode:multiply;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top:50%;
+ width: 3rem;
+}
+
+.loading:after{
+  animation-name: loading-after;
+}
+
+@keyframes loading-before {
+  0%{
+    width:50px;
+    box-shadow:  100px -50px rgba(94,187,203,0.85),
+    -100px 50px rgba(211, 21, 78, 0.85);
+  }
+  35%{
+    width:250px;
+    box-shadow: 0 -50px rgba(94,187,203,0.85),
+    0 50px rgba(211, 21, 78, 0.85);
+  }
+
+  70%{
+    width:50px;
+    box-shadow: -100px -50px rgba(94,187,203,0.85),
+    100px 50px rgba(211, 21, 78, 0.85);
+  }
+
+  100%{
+    box-shadow: 100px -50px rgba(94,187,203,0.85),
+    -100px 50px rgba(211, 21, 78, 0.85);
+  }
+}
+
+@keyframes loading-after {
+  0%{
+    height:50px;
+    box-shadow: 50px 100px rgba(222, 148, 35, 0.85),
+    -50px -100px rgba(52,165,125,0.85);
+  }
+  35%{
+    height:250px;
+    box-shadow: 50px 0px rgba(222, 148, 35, 0.85),
+    -50px 0px rgba(52,165,125,0.85);
+  }
+
+  70%{
+    height:50px;
+    box-shadow: 50px -100px rgba(222, 148, 35, 0.85),
+    -50px 100px rgba(52,165,125,0.85);
+  }
+
+  100%{
+    box-shadow: 50px 100px rgba(222, 148, 35, 0.85),
+     -50px -100px  rgba(52,165,125,0.85);
+  }
+}
+
+
+/* border-image */
+
+.img{
+  margin:30px;
+}
+
+img:nth-of-type(1){
+  border-style: solid;
+  border-width: 32px;
+  -webkit-border-image:url(../image/logo1.png) 32 stretch repeat;
+  border-image: url(../image/logo1.png) 32 stretch repeat;
+}
+
+img:nth-of-type(2){
+  border-style: solid;
+  border-width: 32px;
+  -webkit-border-image:url(../image/logo2.png) 32 round repeat;
+  border-image: url(../image/logo2.png) 32 round repeat;
+}
+
+img:nth-of-type(3){
+  border-style: solid;
+  border-width: 32px;
+  -webkit-border-image:url(../image/logo3.png) 14  repeat round;
+  border-image: url(../image/logo3.png) 14  repeat round;
+}
+
+img:nth-of-type(4){
+  border-style: solid;
+  border-width: 32px;
+  -webkit-border-image:url(../image/logo1.png) 14 repeat stretch ;
+  border-image: url(../image/logo1.png) 14 repeat stretch ;
+}
+</style>
+<body>
+  <!-- border-shadow -->
+ <div class="border-shadow"></div>
+
+ <!-- border-instance -->
+ <form action="" id="" class="search-form">
+   <div class="search-container" >
+    <input type="text" class="search-input"/>
+    <button class="search-button" type="submit">Search</button>
+   </div>
+ </form>
+
+<!-- Loading -->
+ <div class="loading"></div>
+
+ <!-- border-image -->
+ <img src="../image/slide1.png" alt="">
+ <img src="../image/slide1.png" alt="">
+ <img src="../image/slide1.png" alt="">
+ <img src="../image/slide1.png" alt="">
+  </body>
+</html>
