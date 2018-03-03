@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+</head>
+<style>
+    .transition {
+        margin: 15px 10px;
+        width: 200px;
+        height: 200px;
+        background: yellowgreen;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .transition:hover {
+        border-radius: 50%;
+    }
+    
+    .ease:hover {
+        transition: all 1s ease;
+        background: teal;
+    }
+    
+    .linear:hover {
+        transition: all 1s linear;
+        background: red;
+    }
+    
+    .ease-in:hover {
+        transition: all 1s ease-in;
+        background: pink;
+    }
+    
+    .ease-out:hover {
+        transition: all 1s ease-out;
+        background: blue;
+    }
+    
+    .ease-in-out:hover {
+        transition: all 1s ease-in-out;
+        background: grey;
+    }
+    
+    .cubic-bezier:hover {
+        transition: all 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        background: tomato;
+    }
+</style>
+
+<body>
+    <div class="transition ease">ease</div>
+    <div class="transition linear">linear</div>
+    <div class="transition ease-in">ease-in</div>
+    <div class="transition ease-out">ease-out</div>
+    <div class="transition ease-in-out">ease-in-out</div>
+    <div class="transition cubic-bezier">cubic-bezier</div>
+</body>
+
+</html>
