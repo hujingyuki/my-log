@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    input {
+        width: 600px;
+        height: 40px;
+        display: block;
+        border-radius: 5px;
+        margin: 50px auto;
+        border: 1px solid black;
+        padding: 0 14px;
+    }
+    
+    .ok {
+        border-color: greenyellow;
+        box-shadow: 0 0 5px rgba(224 0, 94, 0.54);
+        background-color: #b7ffc0;
+    }
+    
+    .no {
+        border-color: #e00045;
+        box-shadow: 0 0 5px rgba(224 0, 94, 0.54);
+        background-color: #ffa1d3;
+    }
+</style>
+
+<body>
+    <input type="text" class="input" id="input">
+    <div id="box" class="a b c abcddd"></div>
+    <script>
+        let str = "my Name is Chebye！！！你叫什么名字！！";
+        //正则表示式区分大小写
+        let reg = new RegExp("n");
+
+        //reg.test 匹配 返回true、false
+        console.log(reg.test(str));
+
+        //str.match(reg) 返回array数组 index为查找的位置
+        console.log(str.match(reg));
+
+        //str.replace(reg,newstr)  reg可以是表达式
+        //g表示全局 i表示不区分大小写
+        let reg1 = new RegExp("C", "g");
+        console.log(str.replace(reg1, "xxxxx"));
+        console.log(str.replace(/e/gi, "haha"));
+
+        /*
+        特殊含义字符：
+                  *  +  ? $  ^ .  |  \  ()  []
+            *   出现零次或多次 最多一次
+            +   出现一次或多次 最少一次
+            ?   出现零次或一次
+            .   除了换行符和回车符之外的所有字符 [^\n\r]
+            ^   以什么开头（写在最前面。括号外） 和 非
+            $   以什么结束（写在最外面）
+            |   或
+            {3} 出现3次
+            {n,m} 出现n~m次
+            {n,}  至少一次
+        注册表单
+        只能是数字 [0-9]
+        只能是字母[a-z]
+        只能是大写[A-Z]
+        只能是大写或小写或数字[a-zA-Z0-9]
+      
+        \d 数字 [0-9]
+        \D 非数字 [^0-9]
+        \s 空白符 [\t\n\x0B\f\r]
+        \S 非空白符[^\t\n\x0B\f\r]
+        \w 数字字母 [a-zA-Z0-9]
+        \W 非数字字母 [^a-zA-Z0-9]
+        \b 单词边界
+        \B 非单词边界
+        */
+
+        console.log(str.replace(/[！]/g, "~")); //这里使用i不起作用
+        console.log(str.replace(/[A-Z]/g, "~"));
+
+        //匹配中文字符 str中有英文字符就返回false了
+        console.log(/^[\u4e00-\u9fa5]$/.test('大'));
+        //console.log(str.replace(/^[\u4e00-\u9fa5]$/, "~"));
+
+        let oInput = document.getElementById("input");
+        //验证11位手机号
+        //let regPhone = new RegExp('^[1-9]{1}[0-9]{10}$');
+        //验证qq号
+        //let regQQ = /^[1-9]{1}[0-9]{4,10}$/;
+
+        //验证座机号码 /^0[1-9]\d{1,2}-[1-9]\d{2,7}$/
+
+        //邮箱  
+        let regEmail = /^[0-9a-zA-Z]+\w@[0-9a-z]+\.[a-z]{2,3}$/;
+        oInput.onkeyup = function() {
+            console.log(oInput.value);
+            if (regEmail.test(oInput.value)) {
+                this.className = "ok"
+            } else {
+                this.className = "no"
+            }
+        }
+
+        //过滤标签 /<[^>]*>/g
+        let span = "hello <span>你好，我是一个span元素</span> world";
+        console.log(span.replace(/<[^>]*>/g, ''));
+
+        //getClass
+        let regClass = /\babc\b/;
+        console.log(regClass.test(document.body.children[1].className));
+
+        function getClass(obj, sClass) {
+
+            if (obj.getElementsByTagName) {
+                return obj.getElementsByTagName(sClass);
+            } else {
+                let reg = new RegExp('\\b' + sClass + '\\b');
+                let arr = [];
+                var classlist = obj.getElementsByTagName('*');
+                for (let i = 0; i < classlist.length; i++) {
+                    if (reg.test(classlist[i].className)) {
+                        arr.push(classlist[i]);
+                    }
+                }
+                return arr;
+            }
+
+            console.log(classlist);
+        }
+
+        console.log(getClass(document.body, "abc"));
+    </script>
+</body>
+
+</html>
