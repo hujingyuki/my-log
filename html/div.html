@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3个div</title>
+</head>
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .left {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 220px;
+    margin: 0 10px;
+    border: 1px solid black;
+  }
+
+  .right-top {
+    width: 100px;
+    height: 100px;
+    margin: 10px 130px;
+    border: 1px solid black;
+  }
+
+  .right-bottom {
+    width: 100px;
+    height: 100px;
+    margin: 18px 130px;
+    border: 1px solid black;
+  }
+
+  .right {
+    background: #000;
+    width: 150px;
+    height: 150px;
+    margin: -240px 82px;
+  }
+</style>
+
+<body>
+  <div class="left"></div>
+  <div class="right-top"></div>
+  <div class="right-bottom"></div>
+  <div class="right" id='A'></div>
+</body>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script>
+  var divDom = document.getElementById("A");
+  divDom.onmouseover = function () {
+    $(this).animate({
+      width: '200px',
+      height: '200px'
+    }, 500).mouseout(function () {
+      $(this).animate({
+        width: '150px',
+        height: '150px'
+      }, 500);
+    })
+  }
+</script>
+
+</html>
