@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>position</title>
+</head>
+<style>
+  .container {
+    position: relative;
+  }
+
+  .main {
+    height: 300px;
+    margin: 0 120px;
+    background-color: aqua;
+  }
+
+  .left {
+    position: absolute;
+    height: 300px;
+    width: 100px;
+    top: 0;
+    left: 0;
+    background-color: rebeccapurple;
+  }
+
+  .right {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 0;
+    right: 0;
+    background-color: darkblue;
+  }
+</style>
+<!-- 最好用 -->
+
+<body>
+  <div class="container">
+    <div class="main"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+
+</html>

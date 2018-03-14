@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>table</title>
+</head>
+<style>
+  .container {
+    display: table;
+    width: 100%;
+  }
+
+  .left,
+  .main,
+  .right {
+    display: table-cell;
+    height: 300px;
+  }
+
+  .left {
+    width: 200px;
+    background-color: navy;
+  }
+
+  .main {
+    background-color: yellowgreen;
+  }
+
+  .right {
+    width: 200px;
+    background-color: aqua;
+  }
+</style>
+<!-- 没有边距 -->
+
+<body>
+  <div class="container">
+    <div class="left"></div>
+    <div class="main"></div>
+    <div class="right"></div>
+  </div>
+</body>
+
+</html>
